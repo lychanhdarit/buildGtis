@@ -1,0 +1,154 @@
+﻿@model SystemData.Models.GPS_CUSTOMERS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GPS_CUSTOMERS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FULLNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FULLNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDENTITY_CARD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDENTITY_CARD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BIRTHDAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BIRTHDAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATEDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATEDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACCOUNT_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACCOUNT_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FIRST_LOGIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FIRST_LOGIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEEBEGINDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEEBEGINDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FEEENDDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FEEENDDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER_TYPE_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER_TYPE_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PARENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARENT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

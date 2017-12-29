@@ -1,0 +1,66 @@
+﻿
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<script>
+    $(document).ready(function () {
+        GetData("");
+
+    });
+
+    //Lay du lieu
+    function GetData(typeAddress) {
+
+        $.ajax({
+            type: "POST",
+            url: '../Customer/DataIndexJson',
+            data: JSON.stringify({ "searchType": typeAddress }),
+            
+            contentType: "application/json; charset=utf-8", // we are sending in JSON format so we need to specify this
+            dataType: "json", // the data type we want back.  The data will come back in JSON format
+            success: function (data) {
+
+                {
+                    var table = "<table id='myDataTable' class='table table-striped table-bordered' cellspacing='0' width='100%'>";
+                    table += "<thead><tr  > <th>Tài khoản </th>  <th>Họ & tên</th>  <th>Email</th> <th>Điện thoại</th> <th>Địa chỉ</th></tr></thead><tbody>";
+                    $.each(data, function (index, value) {
+
+                        //var onclickFuntion = stringFormat('goiclick(\"{0}\")', value.Tranid);
+                        //var onDoubleclickFuntion = stringFormat('goiDoubleclick(\"{0}\")', value.Tranid);
+                        //var cDate = ToJavaScriptDate(value.timeReal);
+
+                        //table += "<tr  onclick='" + onclickFuntion + "'   ondblclick='" + onDoubleclickFuntion + "' >";
+                        table += "<tr>";
+                        table += "<td>" + value.UserName + " </td><td class='td'> " + value.FullName + "<td>  " + value.Email + " </td></td><td>  " + value.Phone + " </td><td>  " + value.Address + " </td>";
+                        table += "</tr>";
+                    });
+                    table += "</tbody></table>";
+                    $("#dataCus").html(table);
+
+                    $('#myDataTable').DataTable();
+                    //getCurrentTime();
+                }
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+            }
+        });
+
+
+    }
+
+
+</script>
+
+<h2>Khách Hàng</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div id="dataCus">
+   @*Du lieu*@
+</div>

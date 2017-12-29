@@ -1,0 +1,101 @@
+﻿@model PagedList.IPagedList < G.DataEntities.GPS_ACCOUNT_POLICE>
+
+@using G.DataEntities;
+@using G.WebCA.Models;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+Lat+Long: @ViewBag.I
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "AccountPolice", FormMethod.Get))
+{
+    <div class="row">
+        <div class="col-md-8 " style="margin-bottom:10px;">
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @placeholder = "Find by name", @class = "form-control pull-left" })
+            <input type="submit" value="Search" class="btn btn-warning pull-left" />
+        </div>
+    </div>
+}
+<table class="table">
+    <tr>
+      
+        <th>
+           USERNAME
+        </th>
+       
+        <th>
+           FULLNAME
+        </th>
+        <th>
+            EMAIL
+        </th>
+        <th>
+           PHONE
+        </th>
+        <th>
+           STATUS
+        </th>
+       
+       
+        <th>
+           PARENT
+        </th>
+        <th>
+           PROVINCE_TYPE_ID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.USERNAME)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.FULLNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @{
+
+                WServices _s = new WServices();
+                string accountParent = _s.AccountPoliceInfo(item.PARENT).Split('|')[0];
+            }
+            @Html.Raw(accountParent)
+        </td>
+        <td>
+            @{
+                string type = _s.ProvinceInfo(item.PROVINCE_TYPE_ID).Split('|')[0];
+            }
+            @Html.Raw(type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

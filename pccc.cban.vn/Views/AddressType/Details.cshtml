@@ -1,0 +1,43 @@
+﻿@model G.DataEntities.GPS_ADDRESS_TYPE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GPS_ADDRESS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LOCAL_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOCAL_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERNATIONAL_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERNATIONAL_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ICON_URL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICON_URL)
+        </dd>
+
+       
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TYPE_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

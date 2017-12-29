@@ -1,0 +1,50 @@
+﻿@model G.DataEntities.GPS_ADDRESS_TYPE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GPS_ADDRESS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LOCAL_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOCAL_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERNATIONAL_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERNATIONAL_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ICON_URL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICON_URL)
+        </dd>
+
+        
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,14 @@
+﻿
+
+@{
+    ViewBag.Title = "Live";
+}
+
+<h2>Live</h2>
+
+@using (Html.BeginForm())
+{
+    
+    @Html.ListBox("lstMembers", ViewBag.Transports as MultiSelectList)
+}
+

@@ -168,7 +168,7 @@
    font-size:0.9em;
 }
 #myDataSOS{
-    max-height:450px;
+    max-height:350px;
     overflow-y:scroll;
     /*border-radius:5px;*/
 }
@@ -355,7 +355,7 @@
 }
 
 .navbar-inverse {
-    background-color: #ec313a;
+    background-color: #ef5e65;
     border-color: #fff;
     border: none;
 }

@@ -78,7 +78,7 @@
                     </h4>
                 </div>
                 <div id="collapse10" class="panel-collapse collapse in">
-                    <div style="border-bottom:1px solid #f3f3f3">
+                    <div style="">
                         <select class="form-control" id="ddlPhuongtien" style="padding: 0px;font-size: 0.7em;height: 25px;margin:3px;width:95%">
                             <option value="0">Phương tiện</option>
                             <option value="1000">1 km</option>
@@ -88,7 +88,21 @@
                             <option value="50000">50 km</option>
                             <option value="100000">100 km</option>
                         </select>
-                        <select class="form-control" id="ddlTrangThai" style="padding: 0px;font-size: 0.7em;height: 25px;margin:3px;width:95%">
+                        <select class="form-control" id="ddlTrangThai" style="float: left;padding: 0px;font-size: 0.7em;height: 25px;margin:3px;width:65%">
+                            <option value="500">Trang thai</option>
+                           
+                        </select>
+                        <select class="form-control" id="ddlNgay" style="float: left;padding: 0px;font-size: 0.7em;height: 25px;margin:3px;width:28%">
+                            <option value="500">5 ngay</option>
+                            <option value="1000">5</option>
+                            <option value="2000">10</option>
+
+                        </select>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div style="margin-top:5px;border-bottom:1px solid #f3f3f3">
+                        <input id="chkMoBanKinh" type="checkbox" checked="checked" onclick="Radius(this.checked)" title="Hiện thị bán kính" style="margin-left:5px;" />Hiện thị bán kính
+                        <select class="form-control" id="ddlBanKinh" style="float: left;width: 75px;padding: 0px;font-size: 0.7em;height: 25px;margin:3px;">
                             <option value="500">500 m</option>
                             <option value="1000">1 km</option>
                             <option value="2000">2 km</option>
@@ -97,14 +111,8 @@
                             <option value="50000">50 km</option>
                             <option value="100000">100 km</option>
                         </select>
-                        <select class="form-control" id="ddlNgay" style="padding: 0px;font-size: 0.7em;height: 25px;margin:3px;width:95%">
-                            <option value="500">1</option>
-                            <option value="1000">5</option>
-                            <option value="2000">10</option>
-
-                        </select>
+                        <div style="clear:both"></div>
                     </div>
-                    
                     <div id="myDataSOS">
                         <!-- Data -->
                     </div>
@@ -113,18 +121,7 @@
             <!-- Customer -->
             <!-- Address -->
         </div>
-        <div style="margin-top:5px;">
-            <input id="chkMoBanKinh" type="checkbox" checked="checked" onclick="Radius(this.checked)" title="Hiện thị bán kính" style="margin-left:5px;" />Hiện thị bán kính
-            <select class="form-control" id="ddlBanKinh" style="float: left;width: 75px;padding: 0px;font-size: 0.7em;height: 25px;">
-                <option value="500">500 m</option>
-                <option value="1000">1 km</option>
-                <option value="2000">2 km</option>
-                <option value="5000">5 km</option>
-                <option value="10000">10 km</option>
-                <option value="50000">50 km</option>
-                <option value="100000">100 km</option>
-            </select>
-        </div>
+       
     </div>
     <div id="preloaderBox">
         <img src="~/Content/loading.gif" style="max-width:60px" />

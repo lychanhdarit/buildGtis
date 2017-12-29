@@ -612,7 +612,7 @@ function Radius(check) {
 
         var _par = (radius / _radius) - 0.7;
 
-        circleOption.radius = radius + direction * 10;
+        circleOption.radius = radius + direction * 1;
         circleOption.fillOpacity = 1 * _par;
 
         circle.setOptions(circleOption);
@@ -738,7 +738,9 @@ function GetDataSOS() {
     });
 }
 function GetInfoTransport(FullName, Phone, Address, TransportName, TransportAddress, Lat, Long, DriverName) {
-
+    for (i = 0; i < gmarkers.length; i++) {
+        gmarkers[i].setMap(null);
+    }
     IconStatus = "../Content/icon/fire.png";
     var latlng = new google.maps.LatLng(Lat, Long);
     var marker = new google.maps.Marker({
@@ -748,7 +750,7 @@ function GetInfoTransport(FullName, Phone, Address, TransportName, TransportAddr
         map: map,
         animation: google.maps.Animation.DROP
     });
-    marker.setAnimation(google.maps.Animation.BOUNCE);
+    //marker.setAnimation(google.maps.Animation.BOUNCE);
     gmarkers.push(marker);
     //Add Comment
 

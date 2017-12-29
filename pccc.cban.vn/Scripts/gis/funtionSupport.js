@@ -37,9 +37,23 @@ function TimeSpan(value) {
     var dt = new Date(parseFloat(results[1]));
 
     const diff = moment.duration(Date.now() - dt)
-    //return diff.years() + " năm " + diff.months() + " tháng " + diff.days() + " ngày " + diff.hours() + " giờ " + diff.minutes() + " phút " + diff.seconds() + " giây ";
+    var dateView = "[";
 
-    return (-diff.months()) + "M" + (-diff.days()) + "D " + (-diff.hours()) + "h" + (-diff.minutes()) + "m.";
+    if (diff.months() != 0 )
+    {
+        dateView += (diff.months() + diff.days()) + "n ";
+    }
+    else {
+
+        if (diff.days() != 0) {
+            dateView += (diff.days()) + "n ";
+        }
+    }
+    if (diff.hours() != 0) {
+        dateView += (diff.hours()) + ":";
+    }
+
+    return dateView + (diff.minutes()) + "']";
 
 }
 function ConvertToBinary(value) {

@@ -1,4 +1,8 @@
-﻿#googleMap{
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto|Quicksand|Lobster|Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans);
+body{
+    font-family:Roboto
+}
+#googleMap{
    width: 100%;
     min-height: 600px;
     position: absolute;

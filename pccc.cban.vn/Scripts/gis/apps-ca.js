@@ -568,21 +568,12 @@ function SetComment(marker, TransportID, pos) {
 
 function Radius(check) {
 
-    //var chkMoBanKinh = document.getElementById('chkMoBanKinh');
-    //if (check == true) {
+    var chkMoBanKinh = document.getElementById('chkMoBanKinh');
+    if (check == true) {
 
     var banKinh = $("#ddlBanKinh option:selected").val();
 
-    //var cityCircle = new google.maps.Circle({
-    //    strokeColor: '#f7c04c',
-    //    strokeOpacity: 0.8,
-    //    strokeWeight: 2,
-    //    fillColor: '#f7c04c',
-    //    fillOpacity: 0.35,
-    //    map: map,
-    //    center: currentPos,
-    //    radius: parseInt(banKinh)
-    //});
+    
     /* circle test
    ----------------------------------------------- */
     var _radius = parseInt(banKinh);
@@ -629,7 +620,7 @@ function Radius(check) {
         this.setMap(null);
         $("#chkMoBanKinh").attr("checked", false);
     })
-    // }
+    }
 }
 
 //Lay du lieu
@@ -737,6 +728,8 @@ function GetDataSOS() {
         }
     });
 }
+setInterval(GetDataSOS, (5000));//10  giay 
+
 function GetInfoTransport(FullName, Phone, Address, TransportName, TransportAddress, Lat, Long, DriverName) {
     for (i = 0; i < gmarkers.length; i++) {
         gmarkers[i].setMap(null);

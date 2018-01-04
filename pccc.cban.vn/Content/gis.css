@@ -18,7 +18,7 @@ body{
 .close_button{
     text-decoration: none;
     outline: none;
-    display: block;
+    display: none;
     padding: 0px;
     background: #a3ccff;
     border-radius: 50%;
@@ -373,6 +373,7 @@ body{
         color: #fbf8f8 !important ;
     background-color: #ec313a !important ;
     border-color: #d62927 !important ;
+    padding:5px;
 }
 .sos-body{
     border-color: #de1a24 !important ;

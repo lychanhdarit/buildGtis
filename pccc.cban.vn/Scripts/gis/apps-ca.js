@@ -674,12 +674,13 @@ function GetDataSosOlD() {
 
 //Set Time Get Data
 //setInterval(GetDataSosOlD, (10000));//10  giay 
-function IconStatus(bit) {
+function GetIconStatus(bit) {
     var IconS = "../Content/icon/status_sos/warning.png";
-    if (bit >= 7 && bit <= 23)
+    if (bit >= 7 && bit <= 16) //23
         IconS = "../Content/icon/status_sos/sos" + bit + ".png";
     return IconS;
 }
+
 function GetDataSOS() {
 
     $.ajax({
@@ -711,7 +712,7 @@ function GetDataSOS() {
                     //Create popup
                     //var popupAttrible = " data-toggle='modal' data-target='#myModal'";
                     table += "<tr  onclick='" + clickInfoTran + "'   ondblclick='" + onDoubleclickFuntion + "' >";
-                    table += "<td>" + value.TransportName + " <i>" + timeSpan + "</i> <img src='" + IconStatus(Zone.length) + "' alt='SOS Zone" + (Zone.length - 7) + "' title='SOS Zone-" + (Zone.length - 7) + "' /> </td></tr>";
+                    table += "<td>" + value.TransportName + " <i>" + timeSpan + "</i> <img src='" + GetIconStatus(Zone.length) + "' alt='SOS Zone" + (Zone.length - 7) + "' title='SOS Zone-" + (Zone.length - 7) + "' /> </td></tr>";
                 });
                
 
